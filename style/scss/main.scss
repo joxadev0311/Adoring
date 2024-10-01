@@ -310,3 +310,22 @@ main {
     }
   }
 }
+// service
+.service {
+  padding: 45px 0;
+  &__container {
+    @include d-flex(center, space-between);
+  }
+  &__card {
+    @include d-flex(center, center, 15px);
+    &-title {
+      margin-bottom: 6px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    &-text {
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+}
