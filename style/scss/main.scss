@@ -333,8 +333,8 @@ main {
 .section-container {
   background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/bg-gray-1.png?updatedAt=1727723499154)
     no-repeat;
-  background-position: bottom;
-  // background-size: cover;
+  background-position: bottom right;
+  background-size: cover;
 }
 // about
 .about {
@@ -461,6 +461,15 @@ main {
       font-size: 14px;
       font-weight: 500;
       line-height: 145%;
+      @include transition(all, 0.3s, ease);
+      &:hover {
+        color: #000;
+        svg {
+          path {
+            stroke: #000;
+          }
+        }
+      }
     }
     &:nth-child(2) {
       .products__card-button {
@@ -468,6 +477,15 @@ main {
         color: #fff;
         svg path {
           fill: #fff;
+        }
+        &:hover {
+          color: #fff;
+          svg {
+            path {
+              stroke: #fff;
+            }
+          }
+          background-color: #b54708;
         }
       }
     }
@@ -628,6 +646,86 @@ main {
       font-size: 15px;
       font-weight: 700;
       line-height: 22px;
+    }
+  }
+}
+// specification
+.specification {
+  text-align: center;
+  padding-bottom: 106px;
+  &__top {
+    margin-bottom: 74px;
+  }
+  &__title {
+    margin-top: 32px;
+    color: #0c111d;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+  }
+  &__cards {
+    @include d-flex(center, space-between, 32px);
+  }
+  &__card {
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid #f9fafb;
+    background: #fff;
+    box-shadow: 0px 30px 50px 0px #f3f1f4;
+    min-width: 405px;
+    &-title {
+      color: #000;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+    &-info {
+      margin-top: 20px;
+      p {
+        color: #667085;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
+  }
+  &__button {
+    border-radius: 8px;
+    border: 1px solid #e0e3e6;
+    background: #fff;
+    width: fit-content;
+    padding: 16px 20px;
+    @include d-flex(center, center, 10px);
+    margin: 20px auto 0 auto;
+    color: var(--Gray-500, #667085);
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 145%;
+    @include transition(all, 0.3s, ease);
+    &:hover {
+      color: #000;
+      svg {
+        path {
+          stroke: #000;
+        }
+      }
+    }
+    &_orange {
+      background-color: #dc6803;
+      border: none;
+      color: #fff;
+      @include transition(all, 0.3s, ease);
+      &:hover {
+        color: #fff;
+        background-color: #b54708;
+        svg {
+          path {
+            stroke: #fff;
+          }
+        }
+      }
     }
   }
 }
