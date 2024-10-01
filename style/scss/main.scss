@@ -379,6 +379,31 @@ main {
       background-color: #b54708;
     }
   }
+  &__img {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 187px;
+      height: 243.279px;
+      flex-shrink: 0;
+      opacity: 0.72;
+      background: #42307d;
+      right: 0;
+      bottom: 5px;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 187px;
+      height: 492px;
+      flex-shrink: 0;
+      background: #42307d;
+      right: 0;
+      bottom: 5px;
+      z-index: -1;
+    }
+  }
 }
 // product
 .products {
@@ -407,7 +432,8 @@ main {
       padding: 32px 24px;
       display: inline-flex;
       flex-direction: column;
-      background-color: #fff;width: 100%;
+      background-color: #fff;
+      width: 100%;
     }
     &-title {
       color: #000;
@@ -473,5 +499,92 @@ main {
     text-align: center;
     font-size: 20px;
     font-weight: 700;
+  }
+}
+// understanding
+.understanding {
+  margin-bottom: 80px;
+  &__container {
+    @include d-flex(center, center, 32px);
+  }
+  &__top {
+    @include d-flex(end, start, 4px);
+    color: #000;
+    font-family: "Gwendolyn";
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__title {
+    color: #0c111d;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+    margin: 24px 0;
+  }
+  &__description {
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+  &__features {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    &-item {
+      @include d-flex(start, start, 16px);
+    }
+    &-order {
+      span {
+        width: 56px;
+        height: 56px;
+        @include d-flex(center, center, 10px);
+        flex-direction: column;
+        border-radius: 10px;
+        background: var(--clr);
+        // text
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+    &-title {
+      color: #000;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    &-description {
+      color: #000;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+  &__video {
+    margin-top: 48px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 266px;
+      height: 401px;
+      flex-shrink: 0;
+      opacity: 0.72;
+      background: #42307d;
+      bottom: 0;
+      left: 0;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 187px;
+      height: 682.024px;
+      flex-shrink: 0;
+      background: #42307d;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
   }
 }
