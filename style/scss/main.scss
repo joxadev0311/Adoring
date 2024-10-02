@@ -731,6 +731,7 @@ main {
 }
 // packages
 .packages {
+  padding-bottom: 32px;
   &__container {
     @include d-flex(center, center, 40px);
     flex-direction: column;
@@ -777,5 +778,58 @@ main {
     &-text_type2 {
       margin-top: 30px;
     }
+  }
+}
+// procedure
+.procedure {
+  background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/world-map.png?updatedAt=1727723464982)
+    #42307d;
+  background-repeat: no-repeat;
+  // background-size: cover;
+  background-position: center;
+  padding: 36px 0 74px 0;
+  &__top {
+    text-align: center;
+    padding-top: 66px;
+  }
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+    margin-top: 32px;
+  }
+  &__cards {
+    @include d-flex(center, center, 32px);
+    margin-top: 75px;
+  }
+  &__card {
+    padding: 36px 24px;
+    @include d-flex(start, center, 24px);
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6.5px);
+    &-title {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    &-description {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+  &__description {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 100%;
+    max-width: 477px;
+    margin-top: 52px;
   }
 }
