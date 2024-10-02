@@ -14,12 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     languageSwitcher.addEventListener("click", () => {
       languageSwitcher.classList.toggle("language-switcher__open");
-      document.addEventListener('click', (e) => {
-        if (!e.target.closest(".language-switcher") &&!e.target.closest(".language-switcher__option")) {
+      document.addEventListener("click", (e) => {
+        if (
+          !e.target.closest(".language-switcher") &&
+          !e.target.closest(".language-switcher__option")
+        ) {
           languageSwitcher.classList.remove("language-switcher__open");
-        //   document.removeEventListener('click', closeDropdown);
+          //   document.removeEventListener('click', closeDropdown);
         }
-      })
+      });
     });
     const languages = {
       uz: {
@@ -46,5 +49,42 @@ document.addEventListener("DOMContentLoaded", function () {
       selectedLangText.textContent = languages.en.name;
       selectedFlagImg.src = languages.en.flag;
     }
+  }
+
+  // accordion
+  const accordionHeaders = document.querySelectorAll(".accordion__header");
+
+  if (accordionHeaders) {
+    accordionHeaders.forEach((button) => {
+      button.addEventListener("click", () => {
+        const accordionItem = button.parentElement;
+        const accordionContent = accordionItem.querySelector(
+          ".accordion__content"
+        );
+        const clickedIcon = button.querySelector(".accordion__header-icon");
+
+        // Agar accordion ochiq bo'lsa (active class bor bo'lsa), uni yopish
+        if (accordionItem.classList.contains("accordion__item_active")) {
+          accordionItem.classList.remove("accordion__item_active");
+          accordionContent.style.maxHeight = null; // Kontentni yopish
+          clickedIcon.classList.remove("accordion__header-icon_active"); // Icon active'ni olib tashlash
+        } else {
+          // Boshqa ochiq accordionlarni yopish
+          document.querySelectorAll(".accordion__item").forEach((item) => {
+            item.classList.remove("accordion__item_active");
+            item.querySelector(".accordion__content").style.maxHeight = null;
+            item
+              .querySelector(".accordion__header-icon")
+              .classList.remove("accordion__header-icon_active");
+          });
+
+          // Bosilgan accordion'ni ochish
+          accordionItem.classList.add("accordion__item_active");
+          accordionContent.style.maxHeight =
+            accordionContent.scrollHeight + "px";
+          clickedIcon.classList.add("accordion__header-icon_active");
+        }
+      });
+    });
   }
 });

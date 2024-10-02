@@ -833,3 +833,97 @@ main {
     margin-top: 52px;
   }
 }
+// question
+.question {
+  padding-bottom: 100px;
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  &__top {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &__product {
+    &:not(:last-child)
+    {
+      margin-bottom: 46px;
+    }
+  }
+  &__info {
+    color: #000;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 550;
+    line-height: 28px;
+    margin-bottom: 24px;
+  }
+  &__icon {
+    width: 50px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  &__accordion {
+    border-radius: 5px;
+  }
+}
+
+.accordion {
+  @include d-flex(start, center, 24px);
+  flex-direction: column;
+  &__minus-icon {
+    display: none;
+  }
+  &__header {
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    @include d-flex(center, space-between);
+    p {
+      color: #000;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+    &-icon {
+      @include d-flex(center, center);
+      &_active {
+        .accordion__plus-icon {
+          display: none;
+        }
+        .accordion__minus-icon {
+          display: block;
+        }
+      }
+    }
+  }
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding-right: 48px;
+  }
+  &__content p {
+    margin: 8px 0 0;
+    color: #475467;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  &__item_active .accordion__content {
+    max-height: 200px; /* Content balandligiga qarab moslang */
+    // padding: 15px;
+  }
+}
