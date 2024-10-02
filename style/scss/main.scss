@@ -1035,3 +1035,69 @@ main {
     background: #42307d;
   }
 }
+// footer
+.footer {
+  padding: 90px 0 31px 0;
+  background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/texture.png?updatedAt=1727723158406)
+    #101828;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__top {
+    margin-bottom: 46px;
+    @include d-flex(start, space-between);
+    &-info {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+      width: 100%;
+      max-width: 408px;
+      margin: 21px 0 36px 0;
+    }
+    &-social {
+      @include d-flex(center, start, 10px);
+    }
+    &-title {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-bottom: 50px;
+    }
+    &-contact {
+      .footer__menu-item {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &-link {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      width: 100%;
+      max-width: 266px;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    &-item {
+      @include d-flex(start, start, 10px);
+    }
+  }
+  &__bottom {
+    @include d-flex(center, space-between);
+    a {
+      color: #636c79;
+    }
+    color: #636c79;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
