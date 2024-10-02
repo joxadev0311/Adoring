@@ -850,8 +850,7 @@ main {
     margin-bottom: 40px;
   }
   &__product {
-    &:not(:last-child)
-    {
+    &:not(:last-child) {
       margin-bottom: 46px;
     }
   }
@@ -928,5 +927,111 @@ main {
   &__item_active .accordion__content {
     max-height: 200px; /* Content balandligiga qarab moslang */
     // padding: 15px;
+  }
+}
+// contact
+.contact {
+  padding: 100px 0 90px 0;
+  &__container {
+    @include d-flex(start, center, 32px);
+  }
+  &__forms {
+    width: 100%;
+    max-width: 623px;
+  }
+  &__title {
+    color: #0c111d;
+    font-size: 36px;
+    font-weight: 700;
+  }
+  &__description {
+    color: var(--Gray-950, #0c111d);
+    leading-trim: both;
+    text-edge: cap;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    margin: 24px 0;
+    span {
+      color: var(--Error-500, #f04438);
+      leading-trim: both;
+      text-edge: cap;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 26px; /* 185.714% */
+    }
+  }
+  &__form {
+    &-control {
+      input,
+      textarea {
+        width: 100%;
+        padding: 18px 20px;
+        border-radius: 8px;
+        border: 1px solid #f2f4f7;
+        background: #fff;
+        outline: none;
+        margin-bottom: 20px;
+        resize: none;
+        &::placeholder {
+          color: #98a2b3;
+          leading-trim: both;
+          font-family: "Helvetica Neue";
+          text-edge: cap;
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+    }
+    &-action {
+      button {
+        padding: 16px 20px;
+        border-radius: 8px;
+        background: #dc6803;
+        min-width: 187px;
+        color: #fff;
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 145%;
+        @include transition(background, 0.3s, ease);
+        &:hover {
+          background-color: #b54708;
+        }
+      }
+    }
+  }
+  &__details {
+    padding: 32px 24px;
+    h4 {
+      color: #000;
+      margin-bottom: 12px;
+      leading-trim: both;
+      text-edge: cap;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+    }
+    a,
+    p {
+      color: #667085;
+      leading-trim: both;
+      text-edge: cap;
+      font-size: 15px;
+      font-weight: 550;
+      line-height: 26px;
+    }
+    &-item {
+      @include d-flex(start, start, 16px);
+      margin-bottom: 44px;
+    }
+  }
+  &__item-icon {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    @include d-flex(center, center, 10px);
+    border-radius: 33px;
+    background: #42307d;
   }
 }
