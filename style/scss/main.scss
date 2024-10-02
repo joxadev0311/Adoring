@@ -729,3 +729,53 @@ main {
     }
   }
 }
+// packages
+.packages {
+  &__container {
+    @include d-flex(center, center, 40px);
+    flex-direction: column;
+  }
+  &__top {
+    text-align: center;
+  }
+  &__title {
+    color: #0c111d;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42px;
+    margin-top: 32px;
+  }
+  &__contents {
+    @include d-flex(center, center, 33px);
+  }
+  &__content {
+    &-title {
+      color: #0c111d;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+  }
+  &__for-whom {
+    @include d-flex(center, start, 40px);
+    margin: 30px 0;
+    p {
+      @include d-flex(end, start, 6px);
+    }
+    strong {
+      color: #0c111d;
+      font-size: 15px;
+      font-weight: 550;
+    }
+    &-text {
+      color: #0c111d;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    &-text_type2 {
+      margin-top: 30px;
+    }
+  }
+}
