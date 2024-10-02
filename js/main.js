@@ -102,4 +102,10 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // menu
+  const barsMenu = document.querySelector(".header__bars");
+  barsMenu.addEventListener("click", () => {
+    barsMenu.classList.toggle("header__bars--active");
+  });
 });
