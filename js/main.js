@@ -87,4 +87,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+
+  // up
+  const upButton = document.querySelector(".up");
+  if (upButton) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) {
+        upButton.classList.add("up_visible");
+      } else {
+        upButton.classList.remove("up_visible");
+      }
+    });
+    upButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
