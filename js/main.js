@@ -25,13 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     const languages = {
-      uz: {
-        name: "O'zbekcha",
-        flag: "https://ik.imagekit.io/testcloud/Adoring/Icon/Language-en-icon.svg?updatedAt=1727723639436",
-      },
       ru: {
         name: "Русский",
-        flag: "https://ik.imagekit.io/testcloud/Adoring/Icon/Language-en-icon.svg?updatedAt=1727723639436",
+        flag: "https://ik.imagekit.io/testcloud/SultanSeeds/photo/icon/RU.png?updatedAt=1725041169328",
       },
       en: {
         name: "English",
@@ -48,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (langValue === "en") {
       selectedLangText.textContent = languages.en.name;
       selectedFlagImg.src = languages.en.flag;
+    } else {
+      selectedLangText.textContent = languages.ru.name;
+      selectedFlagImg.src = languages.ru.flag;
     }
   }
 
