@@ -735,6 +735,27 @@ main {
     background: #fff;
     box-shadow: 0px 30px 50px 0px #f3f1f4;
     min-width: 405px;
+    &:hover {
+      .hover {
+        opacity: 1;
+      }
+    }
+    &-photo {
+      img {
+        position: relative;
+        z-index: 2;
+      }
+      position: relative;
+      .hover {
+        width: 383px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        @include transition(opacity, 0.5s, ease);
+      }
+    }
     &-title {
       color: #000;
       font-size: 20px;
