@@ -908,6 +908,9 @@ main {
     &:not(:last-child) {
       margin-bottom: 46px;
     }
+    &--1144 {
+      display: none;
+    }
   }
   &__info {
     color: #000;
@@ -1182,10 +1185,12 @@ main {
     @include transition(opacity, 0.5s, ease);
   }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   .container {
     max-width: calc(100% - 48px);
   }
+}
+@media screen and (max-width: 1200px) {
   // contact-panel
   .contact-panel {
     display: none;
@@ -1264,6 +1269,63 @@ main {
     &__cards {
       grid-template-columns: repeat(auto-fill, minmax(252px, 1fr));
       gap: 23px;
+    }
+  }
+  // question
+  .question {
+    background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/vector-1144.png?updatedAt=1727864198612);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding-bottom: 80px;
+    &__product {
+      display: none;
+      &--1144 {
+        display: block;
+      }
+    }
+    .accordion {
+      gap: 46px;
+    }
+  }
+  // contact
+  .contact {
+    padding-top: 0;
+    &__container {
+      flex-direction: column;
+    }
+    &__form-control {
+      textarea {
+        display: none;
+      }
+    }
+    &__forms {
+      max-width: unset;
+    }
+    &__form {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      gap: 32px;
+      &-input {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 24px;
+        width: 100%;
+      }
+      &-control {
+        flex: 1;
+      }
+      input {
+        margin-bottom: 0;
+        width: 100%;
+        background: #f9fafb;
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+        &:nth-child(3) {
+          display: block;
+        }
+      }
     }
   }
   // products
