@@ -1197,6 +1197,12 @@ main {
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     }
   }
+  // specification
+  .specification {
+    &__card {
+    min-width: 344px;
+    }
+  }
 }
 @media screen and (max-width: 1200px) {
   // contact-panel
@@ -1258,12 +1264,12 @@ main {
     &__video {
       width: 100%;
       &::before {
-        width: 459.954px;
-        height: 401px;
+        width: calc(100% - 187px);
+        height: calc(100% - 94px);
       }
       &::after {
-        width: 323.351px;
-        height: 682.024px;
+        width: calc(100% - 229px);
+        height: calc(100% + 20px);
       }
       img {
         width: 100%;
@@ -1411,6 +1417,15 @@ main {
       gap: 16px;
     }
   }
+  // specification
+  .specification {
+    &__cards {
+      flex-wrap: wrap;
+    }
+    &__card {
+      flex: 1;
+    }
+  }
 }
 @media screen and (max-width: 768px) {
   // header
@@ -1419,6 +1434,14 @@ main {
     &__main-title {
       font-size: 60px;
       line-height: 75px;
+    }
+  }
+  // understanding
+  .understanding {
+    &__video {
+      img {
+        height: 259px;
+      }
     }
   }
 }
@@ -1472,6 +1495,37 @@ main {
     background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/375-bg-main.png?updatedAt=1727936096703);
     background-position: bottom;
     background-repeat: no-repeat;
+    &__cards {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+    &__card-photo {
+      img {
+        width: 100%;
+      }
+    }
   }
   // features
+  .features {
+    padding: 32px 0 40px 0;
+
+    &__cards {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+  }
+  // understanding
+  .understanding {
+    margin-bottom: 40px;
+    &__title {
+      font-size: 24px;
+      line-height: 42px;
+    }
+    &__video {
+      &::after {
+        width: 97px;
+      }
+      &::before {
+        width: 139px;
+      }
+    }
+  }
 }
