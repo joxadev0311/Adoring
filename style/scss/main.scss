@@ -51,6 +51,18 @@ button {
   cursor: pointer;
 }
 
+.hidden-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hidden-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 // contact panel
 .contact-panel {
   background: #2c1c5f;
@@ -1591,6 +1603,11 @@ main {
   // spacification
   .specification {
     padding-bottom: 80px;
+    &__card {
+      .hover {
+        width: calc(100% + 64px);
+      }
+    }
   }
   // packages
   .packages {
