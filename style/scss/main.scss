@@ -43,6 +43,23 @@ html {
 .jcsb {
   justify-content: space-between;
 }
+.fldc {
+  flex-direction: column;
+}
+// the intro
+.the-intro {
+  background: #42307d;
+  &__container {
+    @include d-flex(center, center);
+    height: 179px;
+  }
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+  }
+}
 // button
 button {
   border: none;
@@ -1840,6 +1857,81 @@ main {
         font-size: 14px;
         font-weight: 400;
         line-height: 24px;
+      }
+    }
+  }
+}
+// prunes pages
+.prunes {
+  .products {
+    padding: 80px 0;
+  }
+  // dried-prunes
+  .dried-prunes {
+    padding-bottom: 80px;
+    &__intro {
+      @include d-flex(end, start, 4px);
+      h4 {
+        color: #000;
+        font-family: "Gwendolyn";
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+    &__title {
+      color: #0c111d;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 42px;
+      margin: 24px 0;
+    }
+    &__description {
+      color: #000;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-bottom: 32px;
+    }
+    &__cards {
+      @include d-flex(start, start, 32px);
+      flex-direction: column;
+    }
+    &__card {
+      &-title {
+        color: #000;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        margin-bottom: 16px;
+      }
+      &-last {
+        width: 100%;
+        .dried-prunes__menu {
+          border-radius: 7px;
+          background: #f9f5ff;
+          padding: 16px 24px;
+          color: #2c1c5f;
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 32px;
+          gap: 0;
+        }
+      }
+    }
+    &__menu {
+      @include d-flex(start, start, 16px);
+      flex-direction: column;
+    }
+    &__item {
+      @include d-flex(start, start, 10px);
+    }
+    &__content {
+      color: #000;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 32px;
+      p {
+        font-weight: 400;
       }
     }
   }
