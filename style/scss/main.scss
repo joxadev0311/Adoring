@@ -62,7 +62,6 @@ button {
   transform: translateY(0);
 }
 
-
 // contact panel
 .contact-panel {
   background: #2c1c5f;
@@ -1659,7 +1658,8 @@ main {
   }
   // footer
   .footer {
-    background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/mobile-texture.png?updatedAt=1727949558418) #101828;
+    background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/mobile-texture.png?updatedAt=1727949558418)
+      #101828;
     text-align: center;
     &__top {
       align-items: center;
@@ -1683,6 +1683,164 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+  }
+}
+
+// about page
+.about-page {
+  .about-intro {
+    background: #42307d;
+    &__container {
+      @include d-flex(center, center);
+      height: 179px;
+    }
+    &__title {
+      color: #fff;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+    }
+  }
+  .about-info {
+    padding: 80px 0;
+    &__top-intro {
+      @include d-flex(end, start, 4px);
+    }
+    &__title {
+      color: #000;
+      font-family: "Gwendolyn";
+      font-size: 24px;
+      font-weight: 700;
+    }
+    &__main-title {
+      color: #0c111d;
+      font-size: 36px;
+      font-weight: 700;
+      margin: 24px 0;
+      line-height: 42px;
+    }
+    &__description {
+      color: #000;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 32px;
+      margin-bottom: 24px;
+    }
+    &__item {
+      &-title {
+        color: #000;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 32px;
+      }
+      &-description {
+        color: #000;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 32px;
+        padding-left: 34px;
+      }
+    }
+    &__item-top {
+      @include d-flex(center, start, 10px);
+    }
+  }
+  .production-process {
+    padding-top: 32px;
+    @include d-flex(start, start, 32px);
+    flex-direction: column;
+    &__item {
+      @include d-flex(start, center, 32px);
+      &--reverse {
+        flex-direction: row-reverse;
+      }
+    }
+    &__title {
+      color: #000;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+      margin-bottom: 16px;
+    }
+    &__menu {
+      @include d-flex(start, start);
+      flex-direction: column;
+    }
+    &__menu-item {
+      @include d-flex(start, center, 9px);
+      color: #000;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 32px;
+      strong {
+        font-weight: 700;
+      }
+    }
+    &__description {
+      color: #000;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 32px;
+      margin: 16px 0;
+    }
+  }
+  // global-reach
+  .global-reach {
+    background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/world-map.png?updatedAt=1727723464982)
+      #42307d;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &__container {
+      text-align: center;
+      height: 385px;
+      @include d-flex(center, center, 32px);
+      flex-direction: column;
+    }
+    &__title {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    &__description {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 550;
+      line-height: 32px;
+    }
+  }
+  // chouse-us
+  .choose-us {
+    padding: 80px 0;
+    &__title {
+      color: #000;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+      margin-bottom: 32px;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 32px;
+    }
+    &__item {
+      padding: 24px;
+      @include d-flex(center, center, 24px);
+      flex-direction: column;
+      text-align: center;
+      h4 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+      }
     }
   }
 }
