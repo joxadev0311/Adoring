@@ -487,7 +487,8 @@ main {
       @include d-flex(center, center);
       background: linear-gradient(45deg, #e9defa 0%, #fff6eb 100%);
       min-height: 320px;
-      width: 405px;
+      // width: 405px;
+      padding: 0 31px;
     }
     &-content {
       padding: 32px 24px;
@@ -1189,6 +1190,13 @@ main {
   .container {
     max-width: calc(100% - 48px);
   }
+  // products
+  .products {
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+  }
 }
 @media screen and (max-width: 1200px) {
   // contact-panel
@@ -1289,7 +1297,7 @@ main {
   }
   // contact
   .contact {
-    padding-top: 0;
+    padding: 0 0 80px 0;
     &__container {
       flex-direction: column;
     }
@@ -1300,6 +1308,13 @@ main {
     }
     &__forms {
       max-width: unset;
+    }
+    &__details {
+      &-item {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
     &__form {
       display: flex;
@@ -1341,4 +1356,122 @@ main {
       min-width: unset;
     }
   }
+  // features
+  .features {
+    &__cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+  }
+  // up
+  .up {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+@media screen and (max-width: 1144px) {
+  // header
+  .header {
+    &__menu {
+      display: none;
+    }
+  }
+  // about
+  .about {
+    &__container {
+      flex-direction: column;
+    }
+    &__img {
+      width: 100%;
+      &::before {
+        width: 40%;
+      }
+      img {
+        width: 100%;
+        height: 455.279px;
+        object-fit: cover;
+      }
+      &::after {
+        width: 40%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  // services
+  .service {
+    padding: 32px 0;
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 32px;
+    }
+    &__card {
+      justify-content: start;
+      gap: 16px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  // header
+  // intro
+  .intro {
+    &__main-title {
+      font-size: 60px;
+      line-height: 75px;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  // intro
+  .intro {
+    height: 634px;
+    &__badge {
+      padding: 12px 20px 12px 8px;
+      &-flash {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    &__main-title {
+      font-size: 36px;
+      line-height: 40px;
+    }
+    &__sub-title {
+      font-size: 15px;
+      line-height: 24px;
+    }
+    &__chat {
+      display: none;
+    }
+  }
+  // section container
+  .section-container {
+    background-image: unset;
+  }
+  // about
+  .about {
+    padding: 40px 0 80px 0;
+
+    &__img {
+      &::before {
+        height: calc(100% - 131px);
+        width: 97px;
+      }
+      img {
+        height: 281px;
+      }
+      &::after {
+        width: 97px;
+        height: calc(100% + 22px);
+      }
+    }
+  }
+  // products
+  .products {
+    background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/375-bg-main.png?updatedAt=1727936096703);
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  // features
 }
