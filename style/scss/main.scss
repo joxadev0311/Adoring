@@ -1690,6 +1690,14 @@ main {
       gap: 16px;
     }
   }
+  .the-intro {
+    &__container {
+      height: 101px;
+    }
+    &__title {
+      font-size: 24px;
+    }
+  }
 }
 @media screen and (max-width: 420px) {
   .footer {
@@ -1942,11 +1950,6 @@ main {
     .products {
       display: none;
     }
-    .dried-prunes {
-      &__top {
-        margin-top: 80px;
-      }
-    }
   }
 }
 @media screen and (max-width: 480px) {
@@ -1957,5 +1960,18 @@ main {
         line-height: 42px;
       }
     }
+  }
+}
+// supply
+.supply {
+  .dried-prunes__container {
+    padding-top: 80px;
+  }
+  .production-process__menu-item {
+    gap: 9px;
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 32px;
   }
 }
