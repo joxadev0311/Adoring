@@ -104,7 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // menu
   const barsMenu = document.querySelector(".header__bars");
-  barsMenu.addEventListener("click", () => {
-    barsMenu.classList.toggle("header__bars--active");
-  });
+  if (barsMenu) {
+    barsMenu.addEventListener("click", () => {
+      barsMenu.classList.toggle("header__bars--active");
+      const contactPanel = document.querySelector("#top");
+      contactPanel.classList.toggle("contact-panel--active");
+    });
+  }
 });
