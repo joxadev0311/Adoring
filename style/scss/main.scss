@@ -83,12 +83,13 @@ button {
 .contact-panel {
   background: #2c1c5f;
   padding: 20px 0;
+  @include transition(all, 0.5s, ease);
   .lang-toggle {
     display: none;
-    border-radius: 10px;
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.05);
     padding: 12px;
-    font-size: 18px;
+    font-size: 20px;
     @include d-flex(center, center, 12px);
     a {
       color: #fff;
@@ -96,8 +97,8 @@ button {
       &::before {
         position: absolute;
         content: "";
-        width: calc(100% + 12px);
-        height: calc(100% + 8px);
+        width: calc(100% + 8px);
+        height: calc(100% + 12px);
         border-radius: 8px;
         background: #363f72;
         top: 50%;
