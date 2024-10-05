@@ -1,5 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
   const langValue = document.documentElement.lang;
+  // mobile lang switcher
+  const langSwitcher = document.querySelector(".lang-toggle");
+  if (langSwitcher) {
+    const langEl = langSwitcher.querySelectorAll("a");
+    langEl.forEach((lang) => {
+      const langAttribute = lang.getAttribute("data-lang");
+      if (langAttribute === langValue) {
+        langSwitcher.classList.add(`lang-toggle--${langAttribute}`);
+      }
+    });
+  }
 
   const languageSwitcher = document.querySelector(".language-switcher");
   if (languageSwitcher) {
@@ -103,12 +114,38 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // menu
-  const barsMenu = document.querySelector(".header__bars");
+  const barsMenu = document.querySelector("#open");
+  const barsMenuClose = document.querySelector("#close");
+  console.log(barsMenuClose);
+
   if (barsMenu) {
     barsMenu.addEventListener("click", () => {
-      barsMenu.classList.toggle("header__bars--active");
+      barsMenu.classList.add("header__bars--active");
+      barsMenuClose.classList.add("header__bars--active");
       const contactPanel = document.querySelector("#top");
-      contactPanel.classList.toggle("contact-panel--active");
+      contactPanel.classList.add("contact-panel--active");
+      document.body.classList.add("no-scroll");
     });
   }
+  if (barsMenuClose) {
+    barsMenuClose.addEventListener("click", () => {
+      barsMenu.classList.remove("header__bars--active");
+      const contactPanel = document.querySelector("#top");
+      contactPanel.classList.remove("contact-panel--active");
+      document.body.classList.remove("no-scroll");
+    });
+  }
+  // header sticky
+  document.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+
+    if (window.scrollY > 0) {
+      header.classList.add("header--sticky");
+      if (document.body.classList.contains("no-scroll")) {
+        header.classList.remove("header--sticky");
+      }
+    } else {
+      header.classList.remove("header--sticky");
+    }
+  });
 });

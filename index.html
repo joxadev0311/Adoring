@@ -14,11 +14,32 @@
     <div class="wrapper">
       <!-- contact panel -->
       <div class="contact-panel" id="top">
+        <div class="header__bars" id="close">
+          <div class="bars-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
         <div class="container">
           <div class="lang-toggle">
-            <a href="./index.html">English</a>
-            <a href="./ru/index.html">Russian</a>
+            <a href="./index.html" data-lang="en">English</a>
+            <a href="./ru/index.html" data-lang="ru">Russian</a>
           </div>
+          <ul class="header__menu">
+            <li class="header__item">
+              <a href="./en/about.html" class="header__link">About us</a>
+            </li>
+            <li class="header__item">
+              <a href="./en/prunes.html" class="header__link">Dried prunes</a>
+            </li>
+            <li class="header__item">
+              <a href="./en/supply.html" class="header__link">Supply</a>
+            </li>
+            <li class="header__item">
+              <a href="./en/faq.html" class="header__link">FAQs</a>
+            </li>
+          </ul>
           <div class="contact-panel__social">
             <ul class="social-links">
               <li class="social-links__item">
@@ -184,7 +205,7 @@
           </nav>
           <button class="header__button">Contact Us</button>
           <div class="header__bars">
-            <div class="bars-icon">
+            <div class="bars-icon" id="open">
               <div class="line"></div>
               <div class="line"></div>
               <div class="line"></div>

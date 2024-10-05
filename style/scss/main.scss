@@ -67,6 +67,10 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+// no scroll
+.no-scroll {
+  overflow: hidden;
+}
 
 .hidden-section {
   opacity: 0;
@@ -92,8 +96,16 @@ button {
     font-size: 20px;
     height: 60px;
     width: 220px;
-    @include d-flex(center, space-around, 12px);
+    align-items: center;
+    justify-content: space-around;
+    gap: 12px;
     position: relative;
+    &--ru.lang-toggle {
+      &::before {
+        left: unset;
+        right: 5px;
+      }
+    }
     &::before {
       position: absolute;
       content: "";
@@ -109,6 +121,17 @@ button {
     a {
       color: #fff;
       position: relative;
+      height: 100%;
+      width: 100%;
+      @include d-flex(center, center);
+    }
+  }
+  .header__menu {
+    display: none;
+    flex-direction: column;
+    gap: 32px;
+    .header__link {
+      color: #fff;
     }
   }
   .container {
@@ -194,6 +217,15 @@ button {
 }
 // header
 .header {
+  &--sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    background-color: #ffffff8e;
+    backdrop-filter: blur(15px);
+  }
   &__container {
     @include d-flex(center, space-between);
     padding: 20px 0;
@@ -241,6 +273,10 @@ button {
 
     &--active {
       background: rgba(255, 255, 255, 0.05);
+      position: absolute;
+      top: 4px;
+      right: 14px;
+      z-index: 103 !important;
       .line {
         background-color: #fff;
         &:nth-child(1) {
@@ -1288,11 +1324,21 @@ main {
   .contact-panel {
     opacity: 0;
     visibility: hidden;
-    position: absolute;
+    left: 0;
+    top: 0;
+    position: fixed;
     @include transition(all, 0.5s, ease);
     height: 0vh;
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
+    .header__bars {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+    }
+    .header__menu {
+      display: flex;
+    }
     &--active {
       opacity: 1;
       visibility: visible;
@@ -1302,7 +1348,7 @@ main {
       border-bottom-right-radius: 0%;
       border-bottom-left-radius: 0%;
       .lang-toggle {
-        display: flex;
+        display: flex !important;
       }
       .container {
         height: 100vh;
