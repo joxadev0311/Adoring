@@ -113,28 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // menu
-  const barsMenu = document.querySelector("#open");
-  const barsMenuClose = document.querySelector("#close");
-  console.log(barsMenuClose);
 
-  if (barsMenu) {
-    barsMenu.addEventListener("click", () => {
-      barsMenu.classList.add("header__bars--active");
-      barsMenuClose.classList.add("header__bars--active");
-      const contactPanel = document.querySelector("#top");
-      contactPanel.classList.add("contact-panel--active");
-      document.body.classList.add("no-scroll");
-    });
-  }
-  if (barsMenuClose) {
-    barsMenuClose.addEventListener("click", () => {
-      barsMenu.classList.remove("header__bars--active");
-      const contactPanel = document.querySelector("#top");
-      contactPanel.classList.remove("contact-panel--active");
-      document.body.classList.remove("no-scroll");
-    });
-  }
   // header sticky
   document.addEventListener("scroll", function () {
     const header = document.querySelector("header");

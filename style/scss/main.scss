@@ -223,8 +223,8 @@ button {
     top: 0;
     z-index: 99;
     width: 100%;
-    background-color: #ffffff8e;
-    backdrop-filter: blur(15px);
+    background-color: #ffffff7c;
+    backdrop-filter: blur(50px);
   }
   &__container {
     @include d-flex(center, space-between);
@@ -234,69 +234,11 @@ button {
     @include d-flex(center, space-between, 16px);
   }
 
-  &__bars {
-    cursor: pointer;
+  &__menu-icon {
+    padding: 10px;
+    @include d-flex(center, center);
     border-radius: 8px;
     background: #f7f7f8;
-    padding: 10px;
-    @include transition(all, 0.2s, ease);
-    display: none;
-    .bars-icon {
-      width: 20px;
-      height: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-    }
-
-    .line {
-      width: 17px;
-      height: 2px;
-      background-color: #000;
-      position: absolute;
-      @include transition(all, 0.3s, ease);
-      border-radius: 2px;
-      &:nth-child(1) {
-        top: 2px;
-      }
-      &:nth-child(2) {
-        top: 50%;
-        transform: translateY(-50%);
-        width: 14px;
-        left: 0;
-      }
-      &:nth-child(3) {
-        bottom: 2px;
-      }
-    }
-
-    &--active {
-      background: rgba(255, 255, 255, 0.05);
-      position: absolute;
-      top: 4px;
-      right: 14px;
-      z-index: 103 !important;
-      .line {
-        background-color: #fff;
-        &:nth-child(1) {
-          transform: rotate(-45deg) translateY(-50%);
-          top: 50%;
-          width: 100%;
-        }
-
-        &:nth-child(2) {
-          opacity: 0;
-        }
-
-        &:nth-child(3) {
-          transform: rotate(45deg) translateY(-50%);
-          top: 50%;
-          bottom: 0;
-          width: 100%;
-        }
-      }
-    }
   }
 
   &__link {
@@ -1150,6 +1092,10 @@ main {
         outline: none;
         margin-bottom: 20px;
         resize: none;
+        &:focus {
+          box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05),
+            0px 0px 0px 4px rgba(158, 119, 237, 0.24);
+        }
         &::placeholder {
           color: #98a2b3;
           leading-trim: both;
@@ -1210,6 +1156,14 @@ main {
     @include d-flex(center, center, 10px);
     border-radius: 33px;
     background: #42307d;
+  }
+  &__error-message {
+    color: #f97066;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 12px;
   }
 }
 // footer
@@ -1322,50 +1276,7 @@ main {
 @media screen and (max-width: 1200px) {
   // contact-panel
   .contact-panel {
-    opacity: 0;
-    visibility: hidden;
-    left: 0;
-    top: 0;
-    position: fixed;
-    @include transition(all, 0.5s, ease);
-    height: 0vh;
-    border-bottom-right-radius: 100%;
-    border-bottom-left-radius: 100%;
-    .header__bars {
-      position: absolute;
-      right: 24px;
-      top: 24px;
-    }
-    .header__menu {
-      display: flex;
-    }
-    &--active {
-      opacity: 1;
-      visibility: visible;
-      width: 100%;
-      height: 100vh;
-      z-index: 100;
-      border-bottom-right-radius: 0%;
-      border-bottom-left-radius: 0%;
-      .lang-toggle {
-        display: flex !important;
-      }
-      .container {
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        gap: 45px;
-      }
-      .info-menu {
-        flex-direction: column;
-        &__link,
-        a,
-        h4 {
-          border: none;
-          padding-right: 0;
-        }
-      }
-    }
+    display: none;
     .language-switcher {
       display: none;
     }

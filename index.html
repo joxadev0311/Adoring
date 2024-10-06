@@ -12,15 +12,14 @@
   <body>
     <!-- wrapper -->
     <div class="wrapper">
+      <!-- mobile menu -->
+      <div class="mobile-menu">
+        <div class="mobile__nav">
+          <a href="./index.html"> </a>
+        </div>
+      </div>
       <!-- contact panel -->
       <div class="contact-panel" id="top">
-        <div class="header__bars" id="close">
-          <div class="bars-icon">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-        </div>
         <div class="container">
           <div class="lang-toggle">
             <a href="./index.html" data-lang="en">English</a>
@@ -204,12 +203,22 @@
             </ul>
           </nav>
           <button class="header__button">Contact Us</button>
-          <div class="header__bars">
-            <div class="bars-icon" id="open">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
+          <div class="header__menu-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+            >
+              <path
+                d="M2.5 10H14.1667M2.5 5H17.5M2.5 15H17.5"
+                stroke="#101828"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
         </div>
       </header>
@@ -1604,13 +1613,27 @@
               <form class="contact__form">
                 <div class="contact__form-input">
                   <div class="contact__form-control">
-                    <input type="text" placeholder="Your name" />
+                    <input type="text" placeholder="Your name" id="user-name" />
+                    <p class="contact__error-message" id="user-name-error"></p>
                   </div>
                   <div class="contact__form-control">
-                    <input type="tel" placeholder="Phone number" />
+                    <input
+                      type="tel"
+                      placeholder="Phone number"
+                      id="user-number"
+                    />
+                    <p
+                      class="contact__error-message"
+                      id="user-number-error"
+                    ></p>
                   </div>
                   <div class="contact__form-control">
-                    <input type="text" placeholder="Email address" />
+                    <input
+                      type="email"
+                      placeholder="Email address"
+                      id="user-email"
+                    />
+                    <p class="contact__error-message" id="user-email-error"></p>
                   </div>
                   <div class="contact__form-control">
                     <textarea
@@ -1619,10 +1642,14 @@
                       id="message"
                       placeholder="Enter a description..."
                     ></textarea>
+                    <p
+                      class="contact__error-message"
+                      id="user-message-error"
+                    ></p>
                   </div>
                 </div>
                 <div class="contact__form-action">
-                  <button>Send</button>
+                  <button id="send-contact">Send</button>
                 </div>
               </form>
             </div>
@@ -1806,5 +1833,7 @@
     </div>
     <!-- basic script -->
     <script src="./js/main.js"></script>
+    <!-- send message -->
+    <script src="./js/sendMessage.js"></script>
   </body>
 </html>
