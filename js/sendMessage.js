@@ -6,7 +6,7 @@ const sendContactInfo = (message) => {
 
   //   let message = "Salom conversation";
 
-  fetch(`https://api.telegram.org/bot${botToken}/endMessage`, {
+  fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -37,131 +37,9 @@ const sendContactInfo = (message) => {
       }
     })
     .catch((error) => {
-      console.log("Send message failed:", error, data);
+      console.log("Send message failed:", error);
     });
 };
-
-// function inputValidate() {
-//   const name = document.getElementById("user-name");
-//   const phone = document.getElementById("user-number");
-//   const email = document.getElementById("user-email");
-//   const messageInput = document.getElementById("message");
-
-//   const nameError = document.getElementById("user-name-error");
-//   const phoneError = document.getElementById("user-number-error");
-//   const emailError = document.getElementById("user-email-error");
-//   const messageError = document.getElementById("user-message-error");
-
-//   let isValid = true;
-
-//   // Validatsiya funksiyasi
-//   function validateField(field, errorField, errorMessage) {
-//     if (field && field.value.trim() === "") {
-//       isValid = false;
-//       errorField.textContent = errorMessage;
-//     } else {
-//       errorField.textContent = ""; // Xato xabarini tozalash
-//     }
-//   }
-
-//   // Ekran kengligi 1200px dan kichik bo'lsa messageInput DOM'dan olib tashlanadi
-//   if (window.innerWidth < 1200 && messageInput) {
-//     messageInput.remove(); // DOM'dan olib tashlash
-//   }
-
-//   // Har bir maydonni validatsiya qilish
-//   validateField(name, nameError, "Ism kiritilishi shart!");
-//   validateField(phone, phoneError, "Telefon raqami kiritilishi shart!");
-//   validateField(email, emailError, "Email kiritilishi shart!");
-
-//   // MessageInput DOM'da mavjud bo'lsa validatsiya qilinadi
-//   if (messageInput && document.contains(messageInput)) {
-//     validateField(messageInput, messageError, "Xabar kiritilishi shart!");
-//   }
-
-//   return isValid;
-// }
-
-// // Jonli validatsiya
-// const inputs = [
-//   {
-//     field: document.getElementById("user-name"),
-//     errorField: document.getElementById("user-name-error"),
-//     errorMessage: "Ism kiritilishi shart!",
-//   },
-//   {
-//     field: document.getElementById("user-number"),
-//     errorField: document.getElementById("user-number-error"),
-//     errorMessage: "Telefon raqami kiritilishi shart!",
-//   },
-//   {
-//     field: document.getElementById("user-email"),
-//     errorField: document.getElementById("user-email-error"),
-//     errorMessage: "Email kiritilishi shart!",
-//   },
-// ];
-
-// // Message inputni inputs array'iga qo'shish, agar u DOM'da mavjud bo'lsa va 1200px dan kengroq bo'lsa
-// const messageInput = document.getElementById("message");
-// if (messageInput && window.innerWidth >= 1200) {
-//   inputs.push({
-//     field: messageInput,
-//     errorField: document.getElementById("user-message-error"),
-//     errorMessage: "Xabar kiritilishi shart!",
-//   });
-// }
-
-// // Har bir input uchun event hodisasi
-// inputs.forEach((input) => {
-//   input.field.addEventListener("input", () => {
-//     if (input.field.value.trim() === "") {
-//       input.errorField.textContent = input.errorMessage;
-//     } else {
-//       input.errorField.textContent = ""; // Xato xabarini tozalash
-//     }
-//   });
-// });
-
-// const sendMessage = document.querySelector("#send-contact");
-
-// if (sendMessage) {
-//   sendMessage.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     if (inputValidate()) {
-//       // Sana va vaqtni olish
-//       const now = new Date();
-
-//       const formatTimeUnit = (unit) => {
-//         return unit < 10 ? `0${unit}` : unit; // 10 dan kichik bo'lsa 0 qo'shish
-//       };
-
-//       const year = now.getFullYear();
-//       const month = formatTimeUnit(now.getMonth() + 1); // Oyni formatlash
-//       const day = formatTimeUnit(now.getDate()); // Kunni formatlash
-//       const hours = now.getHours(); // Soat
-//       const minutes = formatTimeUnit(now.getMinutes()); // Minutlarni formatlash
-//       const seconds = formatTimeUnit(now.getSeconds()); // Sekundlarni formatlash
-
-//       const htmlElement = document.documentElement;
-//       const langValue = htmlElement.getAttribute("lang");
-
-//       const name = document.getElementById("user-name");
-//       const phone = document.getElementById("user-number");
-//       const email = document.getElementById("user-email");
-//       // const messageInput = document.getElementById("message");
-
-//       // Xabarni yig'ish
-//       let message = `Adoring.uz dan yangi #Contact \n\n\nTil: ${langValue}\nFISH:${name.value.trim()}\nEmail: ${email.value.trim()}\nTelefon: ${phone.value.trim()}\nMatn: ${
-//         messageInput && document.contains(messageInput)
-//           ? messageInput.value.trim()
-//           : "Yo'q"
-//       }\n\n\n${day}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
-
-//       // Xabarni yuborish funksiyasi
-//       sendContactInfo(message);
-//     }
-//   });
-// }
 
 // Xato xabarlarining tarjimalari
 const errorMessages = {
@@ -231,25 +109,37 @@ function inputValidate() {
   return isValid;
 }
 
-// MessageInput elementini ekran kengligi 1200px dan kichik bo'lsa olib tashlash
-function removeMessageInputIfSmallScreen() {
+// Message inputni yashirish funksiyasi
+function hideMessageInput() {
+  const messageInput = document.getElementById("message");
+  if (messageInput) {
+    messageInput.style.display = "none"; // Elementni yashiramiz
+  }
+}
+
+// Message inputni ko'rsatish funksiyasi
+function showMessageInput() {
+  const messageInput = document.getElementById("message");
+  if (messageInput) {
+    messageInput.style.display = "block"; // Elementni ko'rsatamiz
+  }
+}
+
+// Ekran kengligini aniqlab, display ni boshqarish funksiyasi
+function toggleMessageInput() {
   const messageInput = document.getElementById("message");
   if (window.innerWidth < 1200) {
-    if (messageInput) {
-      messageInput.remove(); // DOM dan olib tashlash
-    }
+    hideMessageInput(); // Kichik ekranlarda yashirish
+  } else {
+    showMessageInput(); // Katta ekranlarda ko'rsatish
   }
 }
 
 // Hujjat yuklanganda xususiyatlarni aniqlash
-window.addEventListener("load", () => {
-  removeMessageInputIfSmallScreen();
-});
+window.addEventListener("load", toggleMessageInput);
 
 // Ekran o'lchamini o'zgartirishda xususiyatlarni aniqlash
-window.addEventListener("resize", () => {
-  removeMessageInputIfSmallScreen();
-});
+window.addEventListener("resize", toggleMessageInput);
 
 // Jonli validatsiya uchun input hodisalarini qo'shish
 const inputs = [

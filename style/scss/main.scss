@@ -280,7 +280,6 @@ button {
   }
 }
 .menu-content {
-  overflow-y: auto;
   width: 100%;
   text-align: center;
   .header__menu {
@@ -1491,8 +1490,8 @@ main {
 // up
 .up {
   position: fixed;
-  bottom: 458px;
-  right: 153px;
+  bottom: 30px;
+  right: 30px;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s ease;
