@@ -1,64 +1,54 @@
 document.addEventListener("DOMContentLoaded", function () {
   const langValue = document.documentElement.lang;
-  // mobile lang switcher
-  const langSwitcher = document.querySelector(".lang-toggle");
-  if (langSwitcher) {
-    const langEl = langSwitcher.querySelectorAll("a");
-    langEl.forEach((lang) => {
-      const langAttribute = lang.getAttribute("data-lang");
-      if (langAttribute === langValue) {
-        langSwitcher.classList.add(`lang-toggle--${langAttribute}`);
+
+  const languageSwitcher = document.querySelectorAll(".language-switcher");
+  if (languageSwitcher) {
+    languageSwitcher.forEach((item) => {
+      const selectedLangText = item.querySelector(
+        ".language-switcher__selected_lang"
+      );
+      const selectedFlagImg = item.querySelector(
+        ".language-switcher__selected-flag img"
+      );
+      const languageOptions = item.querySelectorAll(
+        ".language-switcher__option"
+      );
+      item.addEventListener("click", () => {
+        item.classList.toggle("language-switcher__open");
+        document.addEventListener("click", (e) => {
+          if (
+            !e.target.closest(".language-switcher") &&
+            !e.target.closest(".language-switcher__option")
+          ) {
+            item.classList.remove("language-switcher__open");
+          }
+        });
+      });
+      const languages = {
+        ru: {
+          name: "Русский",
+          flag: "https://ik.imagekit.io/testcloud/SultanSeeds/photo/icon/RU.png?updatedAt=1725041169328",
+        },
+        en: {
+          name: "English",
+          flag: "https://ik.imagekit.io/testcloud/Adoring/Icon/Language-en-icon.svg?updatedAt=1727723639436",
+        },
+      };
+      languageOptions.forEach((option) => {
+        option.addEventListener("click", function () {
+          const selectedLang = this.getAttribute("data-lang");
+          selectedLangText.textContent = languages[selectedLang].name;
+          selectedFlagImg.src = languages[selectedLang].flag;
+        });
+      });
+      if (langValue === "en") {
+        selectedLangText.textContent = languages.en.name;
+        selectedFlagImg.src = languages.en.flag;
+      } else {
+        selectedLangText.textContent = languages.ru.name;
+        selectedFlagImg.src = languages.ru.flag;
       }
     });
-  }
-
-  const languageSwitcher = document.querySelector(".language-switcher");
-  if (languageSwitcher) {
-    const selectedLangText = languageSwitcher.querySelector(
-      ".language-switcher__selected_lang"
-    );
-    const selectedFlagImg = languageSwitcher.querySelector(
-      ".language-switcher__selected-flag img"
-    );
-    const languageOptions = languageSwitcher.querySelectorAll(
-      ".language-switcher__option"
-    );
-    languageSwitcher.addEventListener("click", () => {
-      languageSwitcher.classList.toggle("language-switcher__open");
-      document.addEventListener("click", (e) => {
-        if (
-          !e.target.closest(".language-switcher") &&
-          !e.target.closest(".language-switcher__option")
-        ) {
-          languageSwitcher.classList.remove("language-switcher__open");
-          //   document.removeEventListener('click', closeDropdown);
-        }
-      });
-    });
-    const languages = {
-      ru: {
-        name: "Русский",
-        flag: "https://ik.imagekit.io/testcloud/SultanSeeds/photo/icon/RU.png?updatedAt=1725041169328",
-      },
-      en: {
-        name: "English",
-        flag: "https://ik.imagekit.io/testcloud/Adoring/Icon/Language-en-icon.svg?updatedAt=1727723639436",
-      },
-    };
-    languageOptions.forEach((option) => {
-      option.addEventListener("click", function () {
-        const selectedLang = this.getAttribute("data-lang");
-        selectedLangText.textContent = languages[selectedLang].name;
-        selectedFlagImg.src = languages[selectedLang].flag;
-      });
-    });
-    if (langValue === "en") {
-      selectedLangText.textContent = languages.en.name;
-      selectedFlagImg.src = languages.en.flag;
-    } else {
-      selectedLangText.textContent = languages.ru.name;
-      selectedFlagImg.src = languages.ru.flag;
-    }
   }
 
   // accordion
@@ -113,7 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-
   // header sticky
   document.addEventListener("scroll", function () {
     const header = document.querySelector("header");
@@ -126,5 +115,21 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       header.classList.remove("header--sticky");
     }
+  });
+
+  // mobile menu
+  const openButton = document.querySelector(".header__menu-icon");
+  const closeButton = document.querySelector(".mobile__nav button");
+
+  openButton.addEventListener("click", () => {
+    document.body.classList.add("no-scroll");
+    document.querySelector(".mobile-menu").classList.add("mobile-menu_active");
+  });
+
+  closeButton.addEventListener("click", () => {
+    document.body.classList.remove("no-scroll");
+    document
+      .querySelector(".mobile-menu")
+      .classList.remove("mobile-menu_active");
   });
 });
