@@ -122,12 +122,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeButton = document.querySelector(".mobile__nav button");
 
   openButton.addEventListener("click", () => {
-    // document.body.classList.add("no-scroll");
+    document.body.classList.add("no-scroll");
     document.querySelector(".mobile-menu").classList.add("mobile-menu_active");
   });
 
   closeButton.addEventListener("click", () => {
-    // document.body.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
     document
       .querySelector(".mobile-menu")
       .classList.remove("mobile-menu_active");

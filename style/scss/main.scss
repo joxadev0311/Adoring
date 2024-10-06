@@ -280,6 +280,7 @@ button {
   }
 }
 .menu-content {
+  overflow-y: auto;
   width: 100%;
   text-align: center;
   .header__menu {
@@ -570,22 +571,24 @@ main {
     @include d-flex(start, start, 20px);
   }
   &__button {
-    border-radius: 8px;
-    padding: 16px 20px;
-    color: #fff;
-    font-family: "Inter", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 145%;
-    min-width: 115px;
-    @include transition(background);
-    &--primary {
+    a {
+      border-radius: 8px;
+      padding: 16px 20px;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 145%;
+      min-width: 115px;
+      @include transition(background);
+    }
+    .intro__button--primary {
       background: #dc6803;
       &:hover {
         background-color: #b54708;
       }
     }
-    &--secondary {
+    .intro__button--secondary {
       background-color: #42307d;
       &:hover {
         background-color: #2c1c5f;
