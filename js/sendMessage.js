@@ -211,13 +211,14 @@ if (sendMessage) {
       const phone = document.getElementById("user-number");
       const email = document.getElementById("user-email");
       const messageInput = document.getElementById("message");
+      const messageValue =
+        messageInput && document.body.contains(messageInput)
+          ? messageInput.value.trim()
+          : "Izoh inputi mavjud emas";
 
       // Xabar yig'ish
-      let message = `Adoring.uz dan yangi #Contact \n\n\nTil: ${langValue}\nFISH:${name.value.trim()}\nEmail: ${email.value.trim()}\nTelefon: ${phone.value.trim()}\nMatn: ${
-        messageInput && document.contains(messageInput)
-          ? messageInput.value.trim()
-          : "Yo'q"
-      }\n\n\n${day}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
+      let message = `Adoring.uz dan yangi #Contact \n\n\nTil: ${langValue}\nFISH:${name.value.trim()}\nEmail: ${email.value.trim()}\nTelefon: ${phone.value.trim()}\nMatn: ${messageValue}
+      \n\n\n${day}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
 
       // Xabarni yuborish funksiyasi
       sendContactInfo(message);
