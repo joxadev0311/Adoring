@@ -2277,3 +2277,140 @@ main {
     line-height: 32px;
   }
 }
+// Faq
+.faqs {
+  .question {
+    padding: 80px 0;
+    background-image: unset;
+  }
+  .send-question {
+    padding: 80px 0;
+    text-align: center;
+    background: #f9fafb;
+    &__title {
+      color: #000;
+      font-size: 36px;
+      font-weight: 700;
+    }
+    &__description {
+      color: #000;
+      font-size: 16px;
+      font-weight: 550;
+      margin: 24px 0;
+      line-height: 28px;
+    }
+    &__button {
+      color: #fff;
+      font-family: "Inter";
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 145%;
+      border-radius: 8px;
+      background: #dc6803;
+      padding: 16px 20px;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .question__product {
+      display: inline-block;
+    }
+  }
+}
+// question modal
+.question-modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: rgba(41, 0, 76, 0.84);
+  display: none;
+  &_active {
+    display: grid;
+  }
+  &__card {
+    width: 100%;
+    max-width: 474px;
+    padding: 24px;
+    border-radius: 10px;
+    background: #fff;
+  }
+  &__nav {
+    width: 100%;
+    @include d-flex(center, space-between);
+    margin-bottom: 16px;
+  }
+  &__title {
+    color: #2f3641;
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+  }
+  &__form {
+    @include d-flex(start, center, 16px);
+    flex-direction: column;
+    &-control {
+      width: 100%;
+      @include d-flex(start, center, 6px);
+      flex-direction: column;
+      p {
+        color: #f97066;
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+      }
+      label {
+        color: #344054;
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px 14px;
+        border: none;
+        resize: none;
+        outline: none;
+        border-radius: 8px;
+        border: 1px solid #eaecf0;
+        background: #fff;
+        &:focus {
+          border: 1px solid #d6bbfb;
+          box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05),
+            0px 0px 0px 4px rgba(158, 119, 237, 0.24);
+        }
+        &::placeholder {
+          overflow: hidden;
+          color: #667085;
+          text-overflow: ellipsis;
+          font-family: "Inter";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+      textarea {
+        height: 130px;
+      }
+    }
+    &-action {
+      button {
+        border-radius: 8px;
+        background: #dc6803;
+        padding: 16px 20px;
+        color: #fff;
+        font-family: "Inter";
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 145%;
+      }
+    }
+  }
+}

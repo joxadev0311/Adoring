@@ -132,4 +132,21 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelector(".mobile-menu")
       .classList.remove("mobile-menu_active");
   });
+
+  // send question modal
+  const sendQuestionButton = document.querySelector(".send-question__button");
+  const sendQuestionModal = document.querySelector(".question-modal");
+  const closeSendQuestionModalButton2 = document.querySelector(
+    ".question-modal__close"
+  );
+
+  if (sendQuestionButton) {
+    sendQuestionButton.addEventListener("click", () => {
+      sendQuestionModal.classList.add("question-modal_active");
+    });
+  }
+
+  closeSendQuestionModalButton2.addEventListener("click", () => {
+    sendQuestionModal.classList.remove("question-modal_active");
+  });
 });
