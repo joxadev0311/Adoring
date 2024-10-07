@@ -137,7 +137,7 @@ if (sendQuestion) {
       sendQuestionModal.classList.remove("question-modal_active");
       const name = document.querySelector("#name");
       const msg = document.querySelector("#msg");
-      const message = `Adoring.uz dan yangi #kontakt\n\n\Til: ${langValue}\nFISH: ${name.value}\nXabar: ${msg.value}\n\n\n${formattedDate}`;
+      const message = `Adoring.uz dan yangi #obunachi\n\n\Til: ${langValue}\nFISH: ${name.value}\nXabar: ${msg.value}\n\n\n${formattedDate}`;
       sendContactInfo(message);
 
       // Forma yuborilgandan so'ng inputlarni tozalash
