@@ -387,6 +387,11 @@ button {
   }
   .social-links {
     @include d-flex(center, center, 16px);
+    &__item {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
   }
   .info-menu {
     @include d-flex(center, center, 32px);
@@ -1541,7 +1546,7 @@ main {
       display: none;
     }
     &__menu-icon {
-      display: inline-block;
+      display: flex;
     }
   }
   // intro
