@@ -2111,7 +2111,13 @@ main {
       line-height: 32px;
       margin: 16px 0;
     }
+    &__photo {
+      img {
+        border-radius: 16px;
+      }
+    }
   }
+
   // global-reach
   .global-reach {
     background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/world-map.png?updatedAt=1727723464982)
@@ -2410,6 +2416,64 @@ main {
         font-size: 14px;
         font-weight: 500;
         line-height: 145%;
+      }
+    }
+  }
+}
+// @media
+@media screen and (max-width: 1200px) {
+  .about-page {
+    .production-process {
+      &__photo {
+        width: 100%;
+        img {
+          width: 527px;
+          height: 368px;
+        }
+      }
+    }
+    .choose-us {
+      &__list {
+        grid-template-columns: repeat(auto-fill, minmax(327px, 1fr));
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .about-page {
+    .production-process {
+      &__item {
+        flex-direction: column;
+      }
+      &__photo {
+        width: 100%;
+        img {
+          width: 100%;
+          height: 368px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .about-page {
+    .production-process {
+      &__item {
+        flex-direction: column;
+      }
+      &__photo {
+        width: 100%;
+        img {
+          width: 100%;
+          height: 230px;
+          object-fit: cover;
+        }
+      }
+    }
+    .choose-us {
+      &__list {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
       }
     }
   }

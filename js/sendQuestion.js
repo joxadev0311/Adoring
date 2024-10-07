@@ -132,10 +132,12 @@ if (sendQuestion) {
       const seconds = formatTimeUnit(now.getSeconds());
       const formattedDate = `${day}-${month}-${year} - ${hours}:${minutes}:${seconds}`;
 
+      const langValue = document.documentElement.getAttribute("lang");
+
       sendQuestionModal.classList.remove("question-modal_active");
       const name = document.querySelector("#name");
       const msg = document.querySelector("#msg");
-      const message = `Adoring.uz dan yangi #kontakt\n\n\FISH: ${name.value}\nXabar: ${msg.value}\n\n\n${formattedDate}`;
+      const message = `Adoring.uz dan yangi #kontakt\n\n\Til: ${langValue}\nFISH: ${name.value}\nXabar: ${msg.value}\n\n\n${formattedDate}`;
       sendContactInfo(message);
 
       // Forma yuborilgandan so'ng inputlarni tozalash

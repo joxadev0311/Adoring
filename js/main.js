@@ -146,7 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  closeSendQuestionModalButton2.addEventListener("click", () => {
-    sendQuestionModal.classList.remove("question-modal_active");
-  });
+  if (closeSendQuestionModalButton2) {
+    closeSendQuestionModalButton2.addEventListener("click", () => {
+      sendQuestionModal.classList.remove("question-modal_active");
+    });
+  }
 });
