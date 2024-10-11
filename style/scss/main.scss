@@ -1843,6 +1843,8 @@ main {
   // intro
   .intro {
     background: url(https://ik.imagekit.io/testcloud/Adoring/Main-page/bg-375.webp?updatedAt=1728547295386);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 634px;
     &__badge {
       padding: 12px 20px 12px 8px;
