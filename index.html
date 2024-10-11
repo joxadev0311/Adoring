@@ -19,9 +19,9 @@
       rel="preload"
       href="./style/css/main.css"
       as="style"
-      onload="this.rel='stylesheet'"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <!-- <noscript><link rel="stylesheet" href="./style/css/main.css" /></noscript> -->
+    <noscript><link rel="stylesheet" href="./style/css/main.css" /></noscript>
 
     <link
       rel="preload"
@@ -2111,8 +2111,8 @@
       </div>
     </div>
     <!-- basic script -->
-    <script src="./js/main.js" async></script>
+    <script src="./js/main.js" defer></script>
     <!-- send message -->
-    <script src="./js/sendMessage.js" async></script>
+    <script src="./js/sendMessage.js" defer></script>
   </body>
 </html>
