@@ -12,8 +12,16 @@
     />
     <!-- loader -->
     <script src="./js/loader.js" defer></script>
+    <!-- critical scc -->
+    <link rel="stylesheet" href="./style/css/critical.css" />
     <!-- main style -->
-    <link rel="stylesheet" href="./style/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="./style/css/main.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="./style/css/main.css" /></noscript>
     <link
       rel="preload"
       href="https://ik.imagekit.io/testcloud/Adoring/Icon/brand-logo-chirnel.webp"
